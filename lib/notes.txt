@@ -1,0 +1,11 @@
+void move(Vector2 delta) {
+  position.add(delta);
+
+  // Restringir a posição horizontal e vertical aos limites da tela
+  position.x = position.x.clamp(0 + width / 2, game.size.x - width / 2);
+  position.y = position.y.clamp(0 + height / 2, game.size.y - height / 2);
+}
+
+
+
+o que aparece mais e passive 
