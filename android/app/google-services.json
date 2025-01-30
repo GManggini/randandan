@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "464531366295",
+    "project_id": "score-54130",
+    "storage_bucket": "score-54130.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464531366295:android:92ab7ae0bb1abac8f264d2",
+        "android_client_info": {
+          "package_name": "com.example.randandan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-uvu0nIok5ArYTNWo_TOzXVYXcCL-2L8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

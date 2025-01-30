@@ -9,3 +9,37 @@ void move(Vector2 delta) {
 
 
 o que aparece mais e passive 
+import 'package:flutter/material.dart';
+import 'package:flame/game.dart';
+import 'main_menu.dart'; // Importe o Main Menu
+import 'game_over.dart';
+import 'randandan.dart'; // Importe o jogo principal
+
+void main() {
+  final game = Randandan(); // Cria uma instância do jogo
+
+  runApp(
+    GameWidget(
+      game: game,
+      overlayBuilderMap: {
+        'mainMenu': (context, game) => MainMenu(
+              onStartGame: () {
+                game.overlays.remove('mainMenu'); // Remove o Main Menu
+                (game as Randandan).resumeEngine(); // Inicia o jogo
+              },
+            ),
+        'gameOverMenu': (context, game) => GameOverMenu(
+              score: (game as Randandan).score,
+              onRestart: () {
+                game.resetGame();
+                game.overlays.remove('gameOverMenu');
+              },
+              onQuit: () {
+                //TODO Implementar lógica para sair do jogo
+              },
+            ),
+      },
+      initialActiveOverlays: const ['mainMenu'], // Exibe o Main Menu ao abrir o app
+    ),
+  );
+}
